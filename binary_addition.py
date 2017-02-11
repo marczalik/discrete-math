@@ -11,6 +11,17 @@ def bin_add(a, b):
     a.reverse()
     b.reverse()
     
+    if len(a) != len(b):
+        if len(a) > len(b):
+            len_diff = len(a) - len(b)
+            for i in range(len_diff):
+                b.append(0)
+        if len(b) > len(a):
+            len_diff = len(b) - len(a)
+            for i in range(len_diff):
+                a.append(0)
+        
+    
     n = len(b)
     c = 0
     s = [0] * len(b)
@@ -25,4 +36,4 @@ def bin_add(a, b):
     
     return s
 
-print(bin_add([1, 1, 1, 0], [1, 0, 1, 1]))
+#~ print(bin_add([1, 1, 1, 0], [1, 0, 1, 1]))
